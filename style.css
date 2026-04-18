@@ -133,3 +133,37 @@ li {
 section:last-child {
   border-bottom: none;
 }
+
+html {
+  color-scheme: light dark;
+}
+
+nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav a:hover {
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  nav {
+    color: black;
+    background-color: white;
+  }
+}
