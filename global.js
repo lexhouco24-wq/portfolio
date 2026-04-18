@@ -29,6 +29,12 @@ for (let p of pages) {
   a.href = url;
   a.textContent = p.title;
 
+  if (a.host !== location.host) {
+  a.target = "_blank";
+  }
+
+  nav.append(a);  
+
   a.classList.toggle(
     'current',
     a.host === location.host && a.pathname === location.pathname
